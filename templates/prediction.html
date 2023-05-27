@@ -18,16 +18,19 @@
         height: 100vh;
         display: flex;
         flex-direction: column;
-        padding-top: 6rem;
+        padding-top: 2rem;
         /* justify-content: center; */
         align-items: center;
-        background: linear-gradient(to right, #144986 0%, #2989d8, #0d5b9f);
+        border-right: 1px solid white;
+        border-top: 1px solid white;
+        /* background: linear-gradient(to right, #144986 0%, #2989d8, #0d5b9f); */
       }
 
       #right {
-        padding-top: 6rem;
+        padding-top: 2rem;
         height: 100vh;
-        background: linear-gradient(to right, #f0463a, #e04b4b, #c23131);
+        border-top: 1px solid white;
+        /* background: linear-gradient(to right, #f0463a, #e04b4b, #c23131); */
       }
 
       body {
@@ -40,14 +43,14 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
-        margin-top: 15px;
+        margin-top: 5px;
         padding: 5px;
       }
     </style>
     <title>Document</title>
   </head>
   <body>
-    <div class="container-fluid bg-danger">
+    <div class="container-fluid">
       <h1 class="text-center text-white p-4">Spam Email Detection</h1>
       <div class="container-fluid">
         <p class="text-light text-center">
@@ -110,7 +113,7 @@
             >
               <option selected>Select the data split approach</option>
               <option value="KFold">KFold</option>
-              <option value="Train-Test">Train Test Split</option>
+              <option value="Train_Test">Train Test Split</option>
             </select>
             <select
               class="form-select form-select-lg mb-3"
@@ -120,30 +123,35 @@
             >
               <option selected>Select your desired model</option>
               <option value="KNN">KNN</option>
-              <option value="Naive Bayes">Naive Bayes</option>
-              <option value="Support Vector Machine">
-                Support Vector Machine
+              <option value="SVC">Support Vector Machine</option>
+              <option value="Logistic_Regression">Logistic Regression</option>
+              <option value="Decision_Tree">Decision Tree</option>
+              <option value="Random_Forest">Random Forest</option>
+              <option value="Gradient_Boosting_Classifier">
+                Gradient Boosting
               </option>
-              <option value="Logistic Regression">Logistic Regression</option>
-              <option value="Decision Tree">Decision Tree</option>
-              <option value="Random Forest">Random Forest</option>
-              <option value="Gradient Boosting">Gradient Boosting</option>
-              <option value="Bagging Classifier">Bagging Classifier</option>
-              <option value="Adaboost Classifier">Adaboost Classifier</option>
-              <option value="Gaussian Naive Bayes">Gaussian Naive Bayes</option>
+              <option value="Bagging_Classifier">Bagging Classifier</option>
+              <option value="AdaBoost_Classifier">Adaboost Classifier</option>
+              <option value="GaussianNB">Gaussian Naive Bayes</option>
               <option value="MultinomialNB">Multinomial Naive Bayes</option>
             </select>
           </div>
-          <button type="submit" id="predict" class="btn btn-primary">
+          <button
+            type="submit"
+            id="predict"
+            onsubmit="showDiv()"
+            class="btn btn-primary"
+          >
             Check email
           </button>
         </form>
 
-        <div class="container-fluid text-light">
-          <h1>Prediction Result</h1>
-          <p>The email you entered is: {{ email }}</p>
-          <h1>Prediction Result</h1>
-          <p>The prediction is: {{ prediction }}</p>
+        <div id="result" class="container-fluid text-light mt-4">
+          <h2>Prediction Result</h2>
+          <p><b>The email you entered is:</b> {{ email }}</p>
+          <p><b>The split you selected is:</b> {{ split }}</p>
+          <p><b>The model you selected is:</b> {{ model }}</p>
+          <p><b>The prediction is:</b> {{ prediction }}</p>
         </div>
       </div>
     </div>
