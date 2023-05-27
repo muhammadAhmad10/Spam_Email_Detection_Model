@@ -34,7 +34,7 @@
       }
 
       body {
-        background: linear-gradient(to right, #7fa1c6 0%, #6fa8d6, #3f76a7);
+        background: linear-gradient(to right, #020518 0%, #020c14, #020518);
       }
 
       .form-select {
@@ -77,19 +77,54 @@
           </thead>
           <tbody class="text-light">
             <tr>
-              <td>KNN</td>
-              <td>0.95</td>
-              <td>0.95</td>
+              <td>KNeighborsClassifier</td>
+              <td>0.9048</td>
+              <td>0.9241</td>
             </tr>
             <tr>
-              <td>RNN</td>
-              <td>0.95</td>
-              <td>0.95</td>
+              <td>Support Vector Classifier</td>
+              <td>0.9785</td>
+              <td>0.9853</td>
             </tr>
             <tr>
-              <td>Naive Bayes</td>
-              <td>0.95</td>
-              <td>0.95</td>
+              <td>Multinomial Naive Bayes</td>
+              <td>0.9767</td>
+              <td>0.9815</td>
+            </tr>
+            <tr>
+              <td>Logistic Regression</td>
+              <td>0.9731</td>
+              <td>0.9821</td>
+            </tr>
+            <tr>
+              <td>Decision Tree</td>
+              <td>0.9623</td>
+              <td>0.9704</td>
+            </tr>
+            <tr>
+              <td>Random Forest Classifier</td>
+              <td>0.9677</td>
+              <td>0.9776</td>
+            </tr>
+            <tr>
+              <td>Gradient Boosting</td>
+              <td>0.9623</td>
+              <td>0.9731</td>
+            </tr>
+            <tr>
+              <td>Bagging Classifier</td>
+              <td>0.9551</td>
+              <td>0.9718</td>
+            </tr>
+            <tr>
+              <td>AdaBoost Classifier</td>
+              <td>0.9677</td>
+              <td>0.9715</td>
+            </tr>
+            <tr>
+              <td>Gaussian Naive Bayes</td>
+              <td>0.9677</td>
+              <td>0.9715</td>
             </tr>
           </tbody>
         </table>
@@ -99,7 +134,7 @@
         <form class="form-check" action="/prediction" method="POST">
           <div class="form-group">
             <textarea
-              class="form-control"
+              class="form-control mb-3"
               id="exampleFormControlTextarea1"
               rows="3"
               placeholder="Enter email"
