@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="./prediction.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- <script src="./prediction.js"></script> -->
+    <script src="https://pyodide-cdn2.iodide.io/v0.15.0/full/pyodide.js"></script>
+
+    <style>
+      #left {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        padding-top: 6rem;
+        /* justify-content: center; */
+        align-items: center;
+        background: linear-gradient(to right, #144986 0%, #2989d8, #0d5b9f);
+      }
+
+      #right {
+        padding-top: 6rem;
+        height: 100vh;
+        background: linear-gradient(to right, #f0463a, #e04b4b, #c23131);
+      }
+
+      body {
+        background: linear-gradient(to right, #7fa1c6 0%, #6fa8d6, #3f76a7);
+      }
+
+      .form-select {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-top: 15px;
+        padding: 5px;
+      }
+    </style>
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container-fluid bg-danger">
+      <h1 class="text-center text-white p-4">Spam Email Detection</h1>
+      <div class="container-fluid">
+        <p class="text-light text-center">
+          The goal of <em>Spam Email Detection</em> project is to detect whether
+          an email is spam or not
+        </p>
+      </div>
+      <div class="container-fluid pb-4 mb-4">
+        <p class="text-light text-center">
+          Input is the email to be checked. The output is whether the email is
+          spam or not.
+        </p>
+      </div>
+    </div>
+    <div class="container-fluid d-flex">
+      <div id="left" class="container-fluid">
+        <table class="table-active table-danger table table-striped-columns">
+          <thead class="text-light">
+            <tr>
+              <th>Model</th>
+              <th>Train Test Split</th>
+              <th>KFold</th>
+            </tr>
+          </thead>
+          <tbody class="text-light">
+            <tr>
+              <td>KNN</td>
+              <td>0.95</td>
+              <td>0.95</td>
+            </tr>
+            <tr>
+              <td>RNN</td>
+              <td>0.95</td>
+              <td>0.95</td>
+            </tr>
+            <tr>
+              <td>Naive Bayes</td>
+              <td>0.95</td>
+              <td>0.95</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div id="right" class="container-fluid">
+        <form class="form-check" action="/prediction" method="POST">
+          <div class="form-group">
+            <textarea
+              class="form-control"
+              id="exampleFormControlTextarea1"
+              rows="3"
+              placeholder="Enter email"
+              name="email"
+            ></textarea>
+            <select
+              class="form-select form-select-lg mb-3"
+              aria-label=".form-select-lg example"
+              id="spsplit-select"
+              name="split"
+            >
+              <option selected>Select the data split approach</option>
+              <option value="KFold">KFold</option>
+              <option value="Train-Test">Train Test Split</option>
+            </select>
+            <select
+              class="form-select form-select-lg mb-3"
+              aria-label=".form-select-lg example"
+              id="model-select"
+              name="model"
+            >
+              <option selected>Select your desired model</option>
+              <option value="KNN">KNN</option>
+              <option value="Naive Bayes">Naive Bayes</option>
+              <option value="Support Vector Machine">
+                Support Vector Machine
+              </option>
+              <option value="Logistic Regression">Logistic Regression</option>
+              <option value="Decision Tree">Decision Tree</option>
+              <option value="Random Forest">Random Forest</option>
+              <option value="Gradient Boosting">Gradient Boosting</option>
+              <option value="Bagging Classifier">Bagging Classifier</option>
+              <option value="Adaboost Classifier">Adaboost Classifier</option>
+              <option value="Gaussian Naive Bayes">Gaussian Naive Bayes</option>
+              <option value="MultinomialNB">Multinomial Naive Bayes</option>
+            </select>
+          </div>
+          <button type="submit" id="predict" class="btn btn-primary">
+            Check email
+          </button>
+        </form>
+
+        <div class="container-fluid text-light">
+          <h1>Prediction Result</h1>
+          <p>The email you entered is: {{ email }}</p>
+          <h1>Prediction Result</h1>
+          <p>The prediction is: {{ prediction }}</p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
