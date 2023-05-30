@@ -149,7 +149,7 @@ def prediction():
             predicted_label = ['Invalid Input']
 
         print(predicted_label[0])
-        return render_template('prediction.html', email=email, prediction=predicted_label[0],split = split, model = model1)
+        return render_template('prediction.html', email=email, prediction=predicted_label[0], split=split, model=model1)
     else:
         return render_template('prediction.html')
 
