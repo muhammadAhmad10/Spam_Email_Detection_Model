@@ -9,54 +9,54 @@ app = Flask(__name__)
 
 # Load the trained machine learning model
 # Loading the MultinomialNB model
-with open('./models/MultinomialNB_KFold.pkl', 'rb') as f:
+with open('./balanced_dataset_models/MultinomialNB_KFold.pkl', 'rb') as f:
     MultinomialNB_KFold = pickle.load(f)
-with open('./models/MultinomialNB_Train_Test.pkl', 'rb') as f:
+with open('./balanced_dataset_models/MultinomialNB_Train_Test.pkl', 'rb') as f:
     MultinomialNB_Train_Test = pickle.load(f)
 # Loading the AdaBoost Classifier model
-with open('./models/AdaBoost_Classifier_KFold.pkl', 'rb') as f:
+with open('./balanced_dataset_models/AdaBoost_Classifier_KFold.pkl', 'rb') as f:
     AdaBoost_Classifier_KFold = pickle.load(f)
-with open('./models/AdaBoost_Classifier_Train_Test.pkl', 'rb') as f:
+with open('./balanced_dataset_models/AdaBoost_Classifier_Train_Test.pkl', 'rb') as f:
     AdaBoost_Classifier_Train_Test = pickle.load(f)
 # Loading the Bagging Classifier model
-with open('./models/Bagging_Classifier_KFold.pkl', 'rb') as f:
+with open('./balanced_dataset_models/Bagging_Classifier_KFold.pkl', 'rb') as f:
     Bagging_Classifier_KFold = pickle.load(f)
-with open('./models/Bagging_Classifier_Train_Test.pkl', 'rb') as f:
+with open('./balanced_dataset_models/Bagging_Classifier_Train_Test.pkl', 'rb') as f:
     Bagging_Classifier_Train_Test = pickle.load(f)
 # Loading the Decision Tree model
-with open('./models/Decision_Tree_KFold.pkl', 'rb') as f:
+with open('./balanced_dataset_models/Decision_Tree_KFold.pkl', 'rb') as f:
     Decision_Tree_KFold = pickle.load(f)
-with open('./models/Decision_Tree_Train_Test.pkl', 'rb') as f:
+with open('./balanced_dataset_models/Decision_Tree_Train_Test.pkl', 'rb') as f:
     Decision_Tree_Train_Test = pickle.load(f)
 # Loading the GaussianNB model
-with open('./models/GaussianNB_KFold.pkl', 'rb') as f:
+with open('./balanced_dataset_models/GaussianNB_KFold.pkl', 'rb') as f:
     GaussianNB_KFold = pickle.load(f)
-with open('./models/GaussianNB_Train_Test.pkl', 'rb') as f:
+with open('./balanced_dataset_models/GaussianNB_TrainTest.pkl', 'rb') as f:
     GaussianNB_Train_Test = pickle.load(f)
 # Loading the Gradient Boosting Classifier model
-with open('./models/Gradient_Boosting_Classifier.pkl', 'rb') as f:
+with open('./balanced_dataset_models/Gradient_Boosting_Classifier.pkl', 'rb') as f:
     Gradient_Boosting_Classifier_KFold = pickle.load(f)
-with open('./models/Gradient_Boosting_Classifier_Train_Test.pkl', 'rb') as f:
+with open('./balanced_dataset_models/Gradient_Boosting_Classifier_Train_Test.pkl', 'rb') as f:
     Gradient_Boosting_Classifier_Train_Test = pickle.load(f)
 # Loading the KNN model
-with open('./models/KNN_KFold.pkl', 'rb') as f:
+with open('./balanced_dataset_models/KNN_KFold.pkl', 'rb') as f:
     KNN_KFold = pickle.load(f)
-with open('./models/KNN_Train_Test.pkl', 'rb') as f:
+with open('./balanced_dataset_models/KNN_Train_Test.pkl', 'rb') as f:
     KNN_Train_Test = pickle.load(f)
 # Loading the Logistic Regression model
-with open('./models/Logistic_Regression_KFold.pkl', 'rb') as f:
+with open('./balanced_dataset_models/Logistic_Regression_KFold.pkl', 'rb') as f:
     Logistic_Regression_KFold = pickle.load(f)
-with open('./models/Logistic_Regression_Train_Test.pkl', 'rb') as f:
+with open('./balanced_dataset_models/Logistic_Regression_Train_Test.pkl', 'rb') as f:
     Logistic_Regression_Train_Test = pickle.load(f)
 # Loading the Random Forest model
-with open('./models/Random_Forest_KFold.pkl', 'rb') as f:
+with open('./balanced_dataset_models/Random_Forest_KFold.pkl', 'rb') as f:
     Random_Forest_KFold = pickle.load(f)
-with open('./models/Random_Forest_Train_Test.pkl', 'rb') as f:
+with open('./balanced_dataset_models/Random_Forest_Train_Test.pkl', 'rb') as f:
     Random_Forest_Train_Test = pickle.load(f)
 # Loading the SVC model
-with open('./models/SVC_KFold.pkl', 'rb') as f:
+with open('./balanced_dataset_models/SVC_KFold.pkl', 'rb') as f:
     SVC_KFold = pickle.load(f)
-with open('./models/SVC_Train_Test.pkl', 'rb') as f:
+with open('./balanced_dataset_models/SVC_Train_Test.pkl', 'rb') as f:
     SVC_Train_Test = pickle.load(f)
 
 

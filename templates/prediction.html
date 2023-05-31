@@ -67,7 +67,12 @@
     </div>
     <div class="container-fluid d-flex">
       <div id="left" class="container-fluid">
-        <table class="table-active table-danger table table-striped-columns">
+        <h3 class="text-light text-center mb-3">
+          Model Comparison with Unbalanced Dataset
+        </h3>
+        <table
+          class="table-active table-danger table table-striped-columns mb-5"
+        >
           <thead class="text-light">
             <tr>
               <th>Model</th>
@@ -136,6 +141,81 @@
               <td>0.7322</td>
               <td>0.7959</td>
               <td>0.7522</td>
+            </tr>
+          </tbody>
+        </table>
+        <h3 class="text-light text-center mb-3">
+          Model Comparison with Balanced Dataset
+        </h3>
+        <table class="table-active table-danger table table-striped-columns">
+          <thead class="text-light">
+            <tr>
+              <th>Model</th>
+              <th>Train Test Split</th>
+              <th>KFold Best</th>
+              <th>KFold Average</th>
+            </tr>
+          </thead>
+          <tbody class="text-light">
+            <tr>
+              <td>KNeighborsClassifier</td>
+              <td>0.7315</td>
+              <td>0.8054</td>
+              <td>0.7343</td>
+            </tr>
+            <tr>
+              <td>Support Vector Classifier</td>
+              <td>0.9732</td>
+              <td>0.9733</td>
+              <td>0.9605</td>
+            </tr>
+            <tr>
+              <td>Multinomial Naive Bayes</td>
+              <td>0.9799</td>
+              <td>0.98</td>
+              <td>0.9638</td>
+            </tr>
+            <tr>
+              <td>Logistic Regression</td>
+              <td>0.9799</td>
+              <td>0.9799</td>
+              <td>0.9592</td>
+            </tr>
+            <tr>
+              <td>Decision Tree</td>
+              <td>0.9329</td>
+              <td>0.9530</td>
+              <td>0.9251</td>
+            </tr>
+            <tr>
+              <td>Random Forest Classifier</td>
+              <td>0.9597</td>
+              <td>0.9799</td>
+              <td>0.9585</td>
+            </tr>
+            <tr>
+              <td>Gradient Boosting</td>
+              <td>0.8903</td>
+              <td>0.9253</td>
+              <td>0.8888</td>
+            </tr>
+            <tr>
+              <td>Bagging Classifier</td>
+              <td>0.9597</td>
+              <td>0.9533</td>
+              <td>0.9324</td>
+            </tr>
+            <tr>
+              <td>AdaBoost Classifier</td>
+              <td>0.9530</td>
+              <td>0.9664</td>
+              <td>0.9364</td>
+            </tr>
+            <tr>
+              <td>Gaussian Naive Bayes</td>
+              <td>0.9331</td>
+              <td>0.98</td>
+              <td>0.9531</td>
             </tr>
           </tbody>
         </table>
