@@ -116,9 +116,11 @@ def prediction():
             predicted_label = GaussianNB_Train_Test.predict(
                 email_vectorized)
         elif(split == 'KFold' and model1 == 'Gradient_Boosting_Classifier'):
+            email_vectorized = email_vectorized.toarray()
             predicted_label = Gradient_Boosting_Classifier_KFold.predict(
                 email_vectorized)
         elif(split == 'Train_Test' and model1 == 'Gradient_Boosting_Classifier'):
+            email_vectorized = email_vectorized.toarray()
             predicted_label = Gradient_Boosting_Classifier_Train_Test.predict(
                 email_vectorized)
         elif(split == 'KFold' and model1 == 'KNN'):
